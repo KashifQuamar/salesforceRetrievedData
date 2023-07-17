@@ -1,0 +1,29 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <h1> class name=UnboundedParentAuraComponent <br/>
+        child class name=UnboundedChildAuraComponent <br/>
+        <span class="unbounded"> unbounded </span> <br/>
+        note:<br/>
+        scenerio 1 :when child has not default value <br/>
+        then whatever the parent value is child also have the value means same <br/>
+        <br/>
+        Scenerio 2: When child has default value <br/>
+        then nothing will happen <br/>
+        
+        important note: if child value is changed then it does not affect parent value and if parent value is changed then also it does not affect the child value <br/>
+        
+       
+    </h1>
+     <br/> <br/>
+    <aura:attribute name="parentVar" type="string" default="this is parent default value" />
+    <c:UnboundedChildAuraComponent childVar="{!v.parentVar}" />
+    <br/> <br/>
+    
+    <p> 
+    this is parent :{!v.parentVar}
+    </p>
+    
+    <br/>
+    <lightning:button label="Update Parent" onclick="{!c.updateParentVar}"/>
+    
+    
+</aura:component>

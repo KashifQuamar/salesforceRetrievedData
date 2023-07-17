@@ -1,0 +1,49 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-17-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div>
+        <lightning-card>
+             <lightning-input type='text' label='Enter the object name' name='table' onmouseleave={setObjectName}>
+             </lightning-input>
+             
+        </lightning-card>
+    </div>
+    <div class="slds-p-around_small">
+        <lightning-dual-listbox name="languages"
+                                label="Select Fields"
+                                source-label="Available"
+                                selected-label="Selected"
+                                field-level-help="Select your preferred Field Name"
+                                options={listOptions}
+                                onchange={handleChange}></lightning-dual-listbox>
+                              
+   </div>
+   <div>
+    <lightning-button variant='brand' label='Fetch Data' title='title' onclick={fetchdata} class='cssClass'>
+    </lightning-button>
+   </div>
+    <div style="height:300px">
+
+        <lightning-datatable key-field="Id"
+                data={data}
+                columns={columns}
+               
+          show-row-number-column="true"
+       
+          sorted-direction={sortDirection}
+          sorted-by={sortBy}
+           onsort={doSorting}
+            >
+        </lightning-datatable> 
+      </div> 
+    
+       
+     
+      <p>{tableName}</p>
+      <p>{fieldsName}</p>
+</template>

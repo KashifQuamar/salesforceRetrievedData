@@ -1,0 +1,15 @@
+<apex:page controller="WrapperSearchContact">
+    <apex:form >
+        <apex:pageBlock title="Displaying Contact Details with classes" tabStyle="Contact">
+     <apex:pageBlockTable value="{!wrapconlist}" var="wrap">
+        
+         <apex:column value="{!wrap.allContact.id}" />
+         
+          <apex:column value="{!wrap.allContact.Name}" />
+          <apex:column value="{!wrap.allContact.Email}" />
+         <apex:column value="{!wrap.usermail}" />
+         
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+    </apex:page>

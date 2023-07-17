@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-06-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Account Details" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <template if:true={account.data}>
+                <p>Name: {account.data.fields.Name.value}</p>
+                <p>Phone: {account.data.fields.Phone.value}</p>
+                <p>Website: {account.data.fields.Website.value}</p>
+            </template>
+            <template if:true={account.error}>
+                <p>Error retrieving account data</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

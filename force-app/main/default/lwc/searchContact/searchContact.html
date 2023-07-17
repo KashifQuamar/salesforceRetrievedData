@@ -1,0 +1,35 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-04-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card>
+        <lightning-input type='text' label='firstname'  name="firstname">
+        </lightning-input>
+        <lightning-input type='text' label='lastname'  name="lastname">
+        </lightning-input>
+        <lightning-input type='email' label='Email'  name="email">
+        </lightning-input>
+        <lightning-button variant='brand' label='submit' title='title' onclick={handleOnClick} class='cssClass'>
+        </lightning-button>
+    </lightning-card>
+
+    <lightning-card  title="wire demo 1">
+        <div style="height:200px;">
+            <!-- lightning-data table -->
+<lightning-datatable
+key-field="Id"
+data={data}
+columns={columns}
+ 
+onrowaction={handleRowAction}>
+
+</lightning-datatable>
+    <!-- lightning-data table end here -->
+        </div>
+       
+    </lightning-card>
+</template>

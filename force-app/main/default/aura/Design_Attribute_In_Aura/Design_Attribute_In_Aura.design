@@ -1,0 +1,5 @@
+<design:component>
+	<design:attribute name="Heading" label="Enter the Heading"></design:attribute>
+    <design:attribute name="Topic" label="Enter the Topic"></design:attribute>
+    <design:attribute name="Shayar" label="Enter the Shayar's Message"></design:attribute>
+</design:component>

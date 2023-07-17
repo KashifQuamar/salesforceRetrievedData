@@ -1,0 +1,45 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-11-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<apex:page lightningStylesheets="true">
+<apex:slds />
+<div class="slds-scpoe">
+
+ <div class="slds-p-around_small">
+ 
+ <p> Enter the Publish Message</p>
+ <input type="Text" class="slds-input sldx-p-bottom_small" id="inputMessage"/>
+ 
+
+  <div class="slds-p-bottom_small slds-p-top_small">
+  <button class="slds-button slds-button_neutral" onclick="publishMessage()">Publish</button>
+  <button class="slds-button slds-button_neutral" onclick="subscribeMessage()">Subscribe</button>
+  <button class="slds-button slds-button_neutral" onclick="unsubscribeMessage()">Unsubscribe</button>
+ </div>
+
+ <p> Message Received</p>
+<div id="receivedMesage"> 
+
+</div> 
+
+   </div>
+</div>
+<script>
+let  sampleMessageChannel="{!$MessageChannel.SampleMessageChannel__c}"
+
+function publishMessage()
+{
+let data=document.getElementById("inputMessage").value
+const payload={
+lmsData:{
+       value:data
+     }
+}
+sforce.one.publish(sampleMessageChannel,payload)
+}
+</script>
+</apex:page>

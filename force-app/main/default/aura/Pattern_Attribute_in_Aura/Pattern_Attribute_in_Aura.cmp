@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+     <aura:attribute name="inputValue" type="String" default="" />
+    <aura:attribute name="phoneNumber" type="String" default="" />
+    <lightning:input
+        label="Enter a valid email"
+        type="email"
+        value="{!v.inputValue}"
+        required="true"
+                     pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$"
+        messageWhenPatternMismatch="this is kashif"
+    />
+    <lightning:input
+        label="Enter a valid phone number"
+        type="tel"
+        value="{!v.phoneNumber}"
+        required="true"
+        pattern="[6-9]{3}-[0-9]{3}-[0-9]{4}"
+        messageWhenPatternMismatch="Please enter a valid phone number in the format XXX-XXX-XXXX."
+    />
+      <lightning:button label="Click Me" onclick="{!c.handleClick}" />
+</aura:component>
