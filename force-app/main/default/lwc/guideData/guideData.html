@@ -1,0 +1,49 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-12-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+   
+    <lightning-card title="Search Guide Data">
+        <lightning-input type='text'   name="search" onchange={handleOnClick} placeholder="search any contact by name or email">
+        </lightning-input>
+    </lightning-card>
+    <lightning-card>
+        <label for="opt">Choose the no of records</label>
+        <select name="opt"  onchange={handleOnOption}>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+
+    </lightning-card>
+    <lightning-card title="Results">
+        <div style="height:200px;">
+           
+<lightning-datatable
+key-field="Id"
+data={data}
+columns={columns}
+ 
+onrowaction={handleRowAction}>
+
+</lightning-datatable>
+   
+        </div>
+
+    </lightning-card>
+    <lightning-card>
+        <div class="btn">
+            <lightning-button variant='brand' label='prev' title='title' onclick={handleOnPrev} class='btn1'>
+            </lightning-button>
+            <lightning-button variant='brand' label='Next' title='title' onclick={handleOnNext} class='btn2'>
+           </lightning-button>
+        </div>
+    
+    </lightning-card>
+</template>

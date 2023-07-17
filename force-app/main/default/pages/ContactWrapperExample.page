@@ -1,0 +1,16 @@
+<apex:page controller="contactWrapperList">
+    <apex:form >
+        <apex:pageBlock title="Displaying Contact Details with classes" tabStyle="Contact">
+     <apex:pageBlockTable value="{!listcon}" var="wrap">
+         <apex:column >
+         <apex:inputCheckbox value="{!wrap.isSelected}"/>
+         </apex:column>
+         <apex:column value="{!wrap.cont.id}" />
+          <apex:column value="{!wrap.cont.Name}" />
+          <apex:column value="{!wrap.cont.Email}" />
+         
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

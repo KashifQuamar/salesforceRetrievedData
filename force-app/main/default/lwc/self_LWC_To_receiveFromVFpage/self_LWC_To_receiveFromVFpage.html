@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-12-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+   <p>the message is here from visualforce page  </p>
+   <p>{receivedMessage}</p>
+   <hr>
+   <p> Write Message to VF page</p>
+  
+   <lightning-input type='text' label='Message' class="theMessage" onchange={handleInputChange}>
+   </lightning-input>
+   <lightning-button variant='brand' label='Publish to Vf page'  onclick={messagePass} >
+  </lightning-button>
+  
+</template>

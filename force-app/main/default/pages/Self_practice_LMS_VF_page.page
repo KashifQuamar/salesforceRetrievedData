@@ -1,0 +1,62 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-12-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<apex:page >
+    
+    <h1>
+    this is visual force page 
+</h1>
+<input type="text" id="theMessage" />
+<button onclick="publishMC()"> Publish Msg</button>
+
+<p> the Received message from LWC</p>
+<button onclick="subscribeMC()">Subscribe</button>
+<p id="receivedMessage"></p>
+<script> 
+ window.onload = function() {
+    practice(); 
+    subscribeMC();
+ }
+ function practice() {
+    console.log('this is from vfpage 1234567890987654345678');
+ }
+ var SAMPLEMC = "{!$MessageChannel.InputMessage__c}";
+ var subscriptionToMC;
+function publishMC() {
+   
+    const message = {
+        inputMessage:document.getElementById('theMessage').value,
+                
+            };
+            sforce.one.publish(SAMPLEMC, message);
+    
+}
+     function displayMessage(message) {
+        console.log('displayMessageIscalled');
+        console.log(message);
+            console.log(message.inputMessage2);
+            var textLabel = document.querySelector("#receivedMessage");
+           
+            textLabel.innerHTML = message.inputMessage2;
+        }
+
+        function subscribeMC() {
+            console.log('vf called');
+            console.log(!subscriptionToMC);
+            if(!subscriptionToMC){
+                console.log('vf2 called');
+                subscriptionToMC = sforce.one.subscribe(SAMPLEMC,displayMessage);
+            }
+                
+          
+        }
+        
+
+
+</script>
+
+</apex:page>

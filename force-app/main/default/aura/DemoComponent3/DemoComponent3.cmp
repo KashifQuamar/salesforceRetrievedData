@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="Var2" type="string" default="this is default value"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+	<h1>
+    DemoComponent3 : {!v.Var2}
+    </h1>
+    <aura:attribute name="newAcc" type="Account" default="{'sobject':'Account','Name':'testAcc1'}" />
+    <h1>
+    The Account Name :{!v.newAcc.Name}
+    </h1>
+</aura:component>
