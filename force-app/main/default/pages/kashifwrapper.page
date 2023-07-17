@@ -1,0 +1,19 @@
+<apex:page controller="wrapperClass">
+<apex:form >
+  <apex:pageBlock >
+  
+  <apex:pageBlockButtons >
+  <apex:commandButton value="Delete" action="{!delval}" />
+  </apex:pageBlockButtons>
+  <apex:pageBlockTable value="{!wraplist}" var="a">
+  
+ 
+  <apex:column >
+  <apex:inputCheckbox value="{!a.isselected}" />
+  </apex:column>
+  <apex:column value="{!a.kashifacc.name}"/>
+  <apex:column value="{!a.kashifacc.annualrevenue}"/>
+   </apex:pageBlockTable>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

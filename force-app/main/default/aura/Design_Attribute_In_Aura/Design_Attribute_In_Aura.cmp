@@ -1,0 +1,44 @@
+<aura:component controller="ObjectMetadataController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="Heading" type="String" default="Salesforce"/>
+     <aura:attribute name="Topic" type="String" default="Design Resource"/>
+    <aura:attribute name="Shayar" type="string" default="Welcome to Shayar's Cafe"/>
+    
+      <aura:attribute name="objlist" type="list" />
+      <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    
+     <aura:attribute name="picklistValues" type="List" />
+    <aura:attribute name="selectedValues" type="List" />
+    <div>
+    <h1>Welcome to {!v.Heading} </h1>
+    
+    </div>
+    
+    <div>
+  <p> Topic: {!v.Topic}</p>
+    </div>
+    <div>
+    <p>{!v.Shayar}</p>
+    </div>
+    /////
+    <div>
+      <lightning:select name="select1" label="choose An Object Name" aura:id="distance" onchange="{!c.onChange}">
+        <option value="null">None</option>
+        <aura:iteration items="{!v.objlist}" var="obj">
+         <option value="{!obj}">{!obj}</option>
+        </aura:iteration>
+             </lightning:select>
+        <br/>
+       
+        
+       
+        <lightning:dualListbox name="dynamicMultipicklist"
+                           label="Dynamic Multipicklist"
+                           sourceLabel="Available"
+                           selectedLabel="Selected"
+                             
+                           options="{!v.picklistValues}"
+                           value="{!v.selectedValues}"
+                           multiple="true" />
+         <lightning:button label="Search" onclick="{!c.searchData}"/>
+    </div>
+</aura:component>

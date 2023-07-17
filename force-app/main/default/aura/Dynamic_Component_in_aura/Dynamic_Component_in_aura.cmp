@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="message" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+    <p> Dynamically Created Button</p>
+    <br/> <hr/>
+    
+    {!v.body}
+    <br/> <hr/>
+     
+    Button click Result={!v.message}
+</aura:component>
