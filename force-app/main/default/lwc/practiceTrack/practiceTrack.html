@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-01-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="mera naam badshah">
+        <lightning-input type='text' label='first name' onchange={fhandleChange} name="firstname">
+        </lightning-input>
+        <lightning-input type='text' label='last name' onchange={fhandleChange} name="lastname">
+        </lightning-input>
+       
+
+        </lightning-card>
+        <lightning-card title="updated value">
+            <h1>
+         updated first name :{fullname.firstname}; <br>
+         updated last name :{fullname.lastname};
+
+                </h1>
+    </lightning-card>
+</template>

@@ -1,0 +1,47 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-11-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Wrapper Class In LWC">
+        <lightning-input type='text' label='Search'  name="search" onchange={handleOnClick}>
+        </lightning-input>
+    </lightning-card>
+
+ <lightning-card title="All data with userlogin ID" icon-name="custom:custom63">
+   
+    <table class="slds-table slds-table_cell-buffer slds-table_header-hidden slds-table_bordered">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>User login</th>
+           
+        </tr>
+        <tbody>
+            <template for:each={userIdWithContacts} for:item="usercon" >
+                <tr key={usercon.allContact.id}>
+                    <td>
+                        {usercon.allContact.Id}
+                    </td>
+                    <td>
+                        {usercon.allContact.Name}
+                    </td>
+                    <td>
+                        {usercon.allContact.Email}
+                    </td>
+                    <td>
+                        {usercon.usermail}
+                    </td>
+                    
+                </tr>
+               
+            </template>
+        </tbody>
+    </table>
+
+</lightning-card>
+</template>

@@ -1,0 +1,90 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    ////////////////////////
+    <p>
+    class name=DemoAuraComponent2 and child component=DemoAuraComponent3
+    </p>
+    ///////////////
+    <p> Hello this is my first Aura component page</p>
+    <aura:attribute name="Var1" type="String"/>
+     <aura:handler name="init" value="{!this}" action="{!c.doinit}" /> 
+    
+   
+    <h1> 
+    the Component Attribute is: {!v.Var1}
+    </h1>
+    <c:DemoComponent3 />
+    <c:DemoComponent3 Var2="Send value" />
+    <aura:attribute name="newArrayString" type="String[]" 
+                    default="['v1','v2','v3']"/>
+    <p>
+    the Array index 2: {!v.newArrayString[2]}
+    
+    </p>
+    <aura:attribute name="demoSet" type="set" 
+                    default="['set1','set2','set3']" />
+    <p>
+        the new Set at 0 :{!v.demoSet[0]} <br/>
+        the new Set at 1 :{!v.demoSet[1]}<br/>
+        the new Set at 2 :{!v.demoSet[2]}<br/>
+    </p>
+    <hr/>
+     <aura:attribute name="demoList" type="list" 
+                    default="['list1','list2','list3']" />
+    <p>
+        the new list at 0 :{!v.demoList[0]} <br/>
+        the new list at 1 :{!v.demoList[1]}<br/>
+        the new list at 2 :{!v.demoList[2]}<br/>
+        the size of list  :{!v.demoList.length} 
+    </p>
+    <hr/>
+    <aura:attribute name="demoMap" type="Map" 
+                    default="{a:'kashif',b:'samar',c:'aman'}" />
+    <p>
+         the map value at a: {!v.demoMap.a} <br/>
+         the map value at b: {!v.demoMap.b} <br/>
+          the map value at c: {!v.demoMap.c}  <br/>
+    
+    </p>
+    <hr/>
+    
+    <aura:attribute name="jsObject" type="object" />
+    <h1>
+        the jsObject vale of Name: {!v.jsObject.name}<br/>
+        the jsObject vale of Email: {!v.jsObject.email}<br/>
+        the jsObject vale of Address: {!v.jsObject.Address}<br/>
+    </h1>
+    <hr/>
+    
+    
+    /////////////////////////////////////
+    <h1> USE OF WRAPPER CLASS</h1>
+    <aura:attribute name="WrapperClassUserData" type="DemoAuraComponentWrapperClass.WrapperTest" />
+    <h1>
+        WrapperClass User name=:{!v.WrapperClassUserData.mystring1} <br/>
+         WrapperClass User roll no=:{!v.WrapperClassUserData.myInteger} <br/>
+    </h1>
+    ////////////////////////////////////
+    <br/>
+      <br/>
+      <br/>
+    <h1>Call JavaScript Controller Function in Aura Component</h1>
+     <br/>
+      <aura:handler name="init"   value="{!this}" action="{!c.domessageone}" />
+     <aura:attribute name="message1" type="string" />
+   
+    <h1> 
+    the message1 :{!v.message1}
+    </h1> 
+    <br/>
+    <lightning:button label="call Message1" onclick="{!c.handleClick1}"/>
+    <br/>
+    
+     <aura:attribute name="message2" type="string" />
+   
+    <h1> 
+    the message2 :{!v.message2}
+    </h1> 
+    <br/>
+    <lightning:button label="call Message2" onclick="{!c.handleClick2}"/>
+    
+</aura:component>

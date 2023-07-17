@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-16-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title={strTitle} icon-name="custom:custom14">
+        <div>
+            <p class="red">  Hello , {firstName} </p>
+        </div>
+        <div>
+            <template if:true={showImage}>
+                <img src={imgUrl} width="200" height="200"/>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="AccountListForAuraComponent" >
+    <aura:attribute name="acclist" type="list" />
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    
+    <lightning:select name="select1" label="choose An Account Name" aura:id="distance" onchange="{!c.onChange}">
+        <option value="null">None</option>
+        <aura:iteration items="{!v.acclist}" var="item">
+         <option value="{!item}">{!item}</option>
+        </aura:iteration>
+    
+    </lightning:select>
+    
+</aura:component>

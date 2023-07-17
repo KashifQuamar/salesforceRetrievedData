@@ -1,0 +1,8 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="vfhost" type="string" default="grazittiinteractive-21c-dev-ed.develop.my.salesforce.com" />
+    <h1> this aura componenet </h1>
+    <iframe aura:id="vfFrame"
+            src="{!'https://'+ v.vfhost+'/apex/FirstVisualForcePage'}"
+            height="300"
+            width="300" />
+</aura:component>
